@@ -2,6 +2,7 @@ import { Link, NavLink, Route, Routes, useParams } from 'react-router-dom'
 function HomePage() {
     return (
         <>
+            <h1>Gaming BMO</h1>
             <div>
                 <Link to={"/game-list"}>
                     <button>List of Games</button>

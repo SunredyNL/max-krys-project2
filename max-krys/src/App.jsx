@@ -7,6 +7,7 @@ import GamesPlaying from "./pages/GamesPlaying"
 import GamesNotPlaying from "./pages/GamesNotPlaying"
 import Profile from "./pages/Profile"
 import Navbar from './components/Navbar'
+import GameDetails from './pages/GameDetails'
 import './App.css'
 
 function App() {
@@ -15,7 +16,6 @@ function App() {
     <>
       <div className="App">
         <Navbar />
-        <h1>Gaming BMO</h1>
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/profile/:profileId' element={<Profile />} />
@@ -23,6 +23,7 @@ function App() {
           <Route path='/games-played' element={<GamesPlayed />} />
           <Route path='/games-playing' element={<GamesPlaying />} />
           <Route path='/games-not-playing' element={<GamesNotPlaying />} />
+          <Route path='/game-details/:id' element={<GameDetails />} />
           <Route path='*' element={<h1>404 Page Not Found</h1>} />
         </Routes>
       </div>
