@@ -10,9 +10,9 @@ function GameDetails() {
         })
         console.log(response)
         if (response.status === 200) {
-            const game = await response.json()
-            setGame(game)
-            console.log(game)
+            const thisGame = await response.json()
+            setGame(thisGame)
+            console.log(thisGame)
         }
     }
     useEffect(() => {
@@ -20,16 +20,44 @@ function GameDetails() {
         catch { (error) => { console.log(error) } }
     }, [])
 
+
+
+    const addGame = async () => {
+        const payload = {
+            userId: 1,
+            id: game.id,
+            title: game.name,
+            image: game.background_image,
+        }
+        try {
+            const response = await fetch(`http://localhost:5000/games`, {
+                method: "POST",
+                body: JSON.stringify(payload),
+                headers: {
+                    'Content-type': 'application/json',
+                },
+            })
+            if (response.ok) {
+                const currentGame = await response.json()
+                console.log(currentGame)
+            }
+        }
+        catch (error) {
+            console.log(error)
+        }
+    }
+
     return (
-        <div>
+
+        (<div>
             <img src={game.background_image} style={{ height: "200px" }} />
             <p>Name: {game.name}</p>
             <div>About: {game.description_raw}</div>
             <p>Metacritic score: {game.metacritic}</p>
             <p>Average playtime: {game.playtime} hrs</p>
-        </div>
+            <button onClick={addGame}>Add to my games</button>
+        </div>))
 
-    )
 }
 
 export default GameDetails;
