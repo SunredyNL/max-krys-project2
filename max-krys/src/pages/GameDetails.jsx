@@ -29,6 +29,8 @@ function GameDetails() {
             id: game.id,
             title: game.name,
             image: game.background_image,
+            notes: [],
+            milestones: []
         }
         try {
             const response = await fetch(`http://localhost:5000/games`, {

@@ -4,6 +4,11 @@ function HomePage() {
         <>
             <h1>Gaming BMO</h1>
             <div>
+                <Link to={"/profile/1"}>
+                    <button>My Profile</button>
+                </Link>
+            </div>
+            <div>
                 <Link to={"/game-list"}>
                     <button>List of Games</button>
                 </Link>

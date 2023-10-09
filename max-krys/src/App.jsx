@@ -19,7 +19,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path='/' element={<HomePage />} />
-          <Route path='/profile/:profileId' element={<Profile />} />
+          <Route path='/profile/:id' element={<Profile />} />
           <Route path='/game-list' element={<GameList />} />
           <Route path='/games-played' element={<GamesPlayed />} />
           <Route path='/games-playing' element={<GamesPlaying />} />
