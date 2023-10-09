@@ -8,6 +8,7 @@ function GameList() {
     const [currPage, setCurrPage] = useState(url)
     const [previous, setPrevious] = useState("")
     const [next, setNext] = useState("")
+    const [gamesNotPlaying, setGamesNotPlaying] = useState([]);
     const fetchAllGames = async () => {
         const response = await fetch(currPage, {
             method: 'GET',
@@ -21,8 +22,22 @@ function GameList() {
             console.log(games)
         }
     }
+
+    const fetchGamesIDontPlay = async () => {
+        const response = await fetch(`http://localhost:5000/users/1?_embed=gamesNotPlaying`, {
+            method: 'GET',
+        })
+        console.log(response)
+        if (response.status === 200) {
+            const user = await response.json()
+            setGamesNotPlaying(user.gamesNotPlaying)
+            console.log(user.gamesNotPlaying)
+        }
+    }
     useEffect(() => {
         try { fetchAllGames() }
+        catch { (error) => { console.log(error) } }
+        try { fetchGamesIDontPlay() }
         catch { (error) => { console.log(error) } }
     }, [])
     useEffect(() => {
@@ -40,12 +55,25 @@ function GameList() {
             setCurrPage(previous)
         }
     }
+    const filterNotPlaying = (game) => {
+        for (let i = 0; i < gamesNotPlaying.length; i += 1) {
+            const currGame = gamesNotPlaying[i]
+            if (currGame.id === game.id) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     return (
         <>
-            {games.map(game => (
+            {games.filter((currentGame) => {
+                return !filterNotPlaying(currentGame);
+            }
+            ).map(game => (
                 <Link to={`/game-details/${game.id}`}> <Game name={game.name} key={game.id} id={game.id} background_image={game.background_image} /> </Link>
-            ))}
+            )
+            )}
             {previous && <button onClick={onPrevious}>Previous page</button>}
             {next && <button onClick={onNext}>Next Page</button>}
         </>)
