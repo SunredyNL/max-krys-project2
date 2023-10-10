@@ -3,9 +3,11 @@ import { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar';
 import GamePlaying from '../components/GamePlaying';
 function GamesPlaying() {
+    const { id } = useParams();
+
     const [gamesPlaying, setGamesPlaying] = useState([]);
     const fetchGamesIPlay = async () => {
-        const response = await fetch(`https://gamejournal-backend-2023.adaptable.app/users/1?_embed=games`, {
+        const response = await fetch(`https://gamejournal-backend-2023.adaptable.app/users/${id}?_embed=games`, {
             method: 'GET',
         })
         console.log(response)
@@ -21,7 +23,7 @@ function GamesPlaying() {
     }, [])
     const handleDelete = async (game) => {
         const payload = {
-            userId: 1,
+            userId: id,
             id: game.id,
             title: game.title,
             image: game.image,

@@ -2,9 +2,11 @@ import { useEffect, useState } from 'react'
 import GamePlaying from '../components/GamePlaying';
 import Navbar from '../components/Navbar';
 function GamesNotPlaying() {
+    const { id } = userParams();
+
     const [gamesNotPlaying, setGamesNotPlaying] = useState([]);
     const fetchGamesIDontPlay = async () => {
-        const response = await fetch(`https://gamejournal-backend-2023.adaptable.app/users/1?_embed=gamesNotPlaying`, {
+        const response = await fetch(`https://gamejournal-backend-2023.adaptable.app/users/${id}?_embed=gamesNotPlaying`, {
             method: 'GET',
         })
         console.log(response)
