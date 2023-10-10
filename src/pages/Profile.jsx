@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import { useParams } from 'react-router-dom'
 import '../App.css'
+import firstlike from "../assets/firstlike.png"
+import firstcomment from "../assets/firstcomment.png"
+import likeandcomment from "../assets/likeandcomment.png"
 function Profile() {
     const [profile, setProfile] = useState({})
     const [likes, setLikes] = useState(0)
@@ -126,6 +129,11 @@ function Profile() {
                     </label>
                     <button className='addButton' type="submit">Add</button>
                 </form>
+                <div className='badges'>
+                    <img src={firstlike} />
+                    <img src={firstcomment} />
+                    <img src={likeandcomment} />
+                </div>
             </div>
 
         </>)
