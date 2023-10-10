@@ -25,7 +25,7 @@ function GameList() {
     }
 
     const fetchGamesIDontPlay = async () => {
-        const response = await fetch(`http://localhost:5000/users/1?_embed=gamesNotPlaying`, {
+        const response = await fetch(`https://gamejournal-backend-2023.adaptable.app/users/1?_embed=gamesNotPlaying`, {
             method: 'GET',
         })
         console.log(response)

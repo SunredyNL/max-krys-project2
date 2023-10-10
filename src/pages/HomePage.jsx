@@ -5,7 +5,7 @@ function HomePage() {
     return (
         <div className='container'>
             <img className="gif" src={bmoadventure} />
-            <div className='middle'><Link className='linkText' to={"/profile/1"}><span className='textDPad'>Profile</span></Link></div>
+
             <div className="buttons">
                 <div>
                     <Link to={"/game-list"}>
@@ -19,6 +19,10 @@ function HomePage() {
                     </Link>
                 </div>
             </div>
+
+            <div className='up'></div>
+            <div className='middle'><Link className='linkText' to={"/profile/1"}><span className='textDPad'>Profile</span></Link></div>
+            <div className='down'></div>
             <div className="buttons2">
                 <div className="buttons3">
                     <div>
