@@ -5,6 +5,8 @@ import { Link, NavLink, Route, Routes, useParams } from 'react-router-dom'
 const apiKey = "03d5981c38e0462b823b8533abbe6af3"
 const url = `https://api.rawg.io/api/games?key=${apiKey}`
 function GameList() {
+    const { id } = useParams();
+
     const [games, setGames] = useState([])
     const [currPage, setCurrPage] = useState(url)
     const [previous, setPrevious] = useState("")
@@ -25,7 +27,7 @@ function GameList() {
     }
 
     const fetchGamesIDontPlay = async () => {
-        const response = await fetch(`http://localhost:5000/users/1?_embed=gamesNotPlaying`, {
+        const response = await fetch(`https://gamejournal-backend-2023.adaptable.app/users/${id}?_embed=gamesNotPlaying`, {
             method: 'GET',
         })
         console.log(response)

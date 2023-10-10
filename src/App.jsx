@@ -10,6 +10,7 @@ import Navbar from './components/Navbar'
 import GamesPlayingDetails from './pages/GamePlayingDetails'
 import GameDetails from './pages/GameDetails'
 import './App.css'
+import LandingPage from './pages/LandingPage'
 
 function App() {
 
@@ -18,14 +19,15 @@ function App() {
       <div className="App">
 
         <Routes>
-          <Route path='/' element={<HomePage />} />
+          <Route path='/home-page/:id' element={<HomePage />} />
           <Route path='/profile/:id' element={<Profile />} />
-          <Route path='/game-list' element={<GameList />} />
-          <Route path='/games-played' element={<GamesPlayed />} />
-          <Route path='/games-playing' element={<GamesPlaying />} />
-          <Route path='/games-not-playing' element={<GamesNotPlaying />} />
+          <Route path='/game-list/:id' element={<GameList />} />
+          <Route path='/games-played/:id' element={<GamesPlayed />} />
+          <Route path='/games-playing/:id' element={<GamesPlaying />} />
+          <Route path='/games-not-playing/:id' element={<GamesNotPlaying />} />
           <Route path='/game-details/:id' element={<GameDetails />} />
           <Route path='/game-playing/:id' element={<GamesPlayingDetails />} />
+          <Route path='/' element={<LandingPage />} />
           <Route path='*' element={<h1>404 Page Not Found</h1>} />
         </Routes>
       </div>
