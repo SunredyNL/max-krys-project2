@@ -8,7 +8,7 @@ function GamesPlayingDetails() {
     const [newNote, setNewNote] = useState("")
     const { id } = useParams()
     const fetchThisGame = async () => {
-        const response = await fetch(`http://localhost:5000/games/${id}`, {
+        const response = await fetch(`https://gamejournal-backend-2023.adaptable.app/games/${id}`, {
             method: 'GET',
         })
         console.log(response)
@@ -27,7 +27,7 @@ function GamesPlayingDetails() {
         console.log(updatedNotes)
         try {
             const response = await fetch(
-                `http://localhost:5000/games/${id}`,
+                `https://gamejournal-backend-2023.adaptable.app/games/${id}`,
                 {
                     method: 'PATCH',
                     body: JSON.stringify(updatedNotes),
@@ -52,7 +52,7 @@ function GamesPlayingDetails() {
         console.log(updatedMilestones)
         try {
             const response = await fetch(
-                `http://localhost:5000/games/${id}`,
+                `https://gamejournal-backend-2023.adaptable.app/games/${id}`,
                 {
                     method: 'PATCH',
                     body: JSON.stringify(updatedMilestones),

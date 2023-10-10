@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 function GamesNotPlaying() {
     const [gamesNotPlaying, setGamesNotPlaying] = useState([]);
     const fetchGamesIDontPlay = async () => {
-        const response = await fetch(`http://localhost:5000/users/1?_embed=gamesNotPlaying`, {
+        const response = await fetch(`https://gamejournal-backend-2023.adaptable.app/users/1?_embed=gamesNotPlaying`, {
             method: 'GET',
         })
         console.log(response)
@@ -22,7 +22,7 @@ function GamesNotPlaying() {
 
     const handleDelete = async (game) => {
         try {
-            const response = await fetch(`http://localhost:5000/gamesNotPlaying/${game.id}`, {
+            const response = await fetch(`https://gamejournal-backend-2023.adaptable.app/gamesNotPlaying/${game.id}`, {
                 method: 'DELETE',
             })
             if (response.ok) {

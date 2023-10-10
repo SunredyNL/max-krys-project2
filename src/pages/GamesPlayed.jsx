@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 function GamesPlayed() {
     const [gamesPlayed, setGamesPlayed] = useState([]);
     const fetchGamesIPlayed = async () => {
-        const response = await fetch(`http://localhost:5000/gamesFinished`, {
+        const response = await fetch(`https://gamejournal-backend-2023.adaptable.app/gamesFinished`, {
             method: 'GET',
         })
         console.log(response)

@@ -8,7 +8,7 @@ function Profile() {
     const [newComment, setNewComment] = useState("")
     const { id } = useParams()
     const fetchThisProfile = async () => {
-        const response = await fetch(`http://localhost:5000/users/${id}`, {
+        const response = await fetch(`https://gamejournal-backend-2023.adaptable.app/users/${id}`, {
             method: 'GET',
         })
         console.log(response)
@@ -29,7 +29,7 @@ function Profile() {
         console.log(updatedComments)
         try {
             const response = await fetch(
-                `http://localhost:5000/users/${id}`,
+                `https://gamejournal-backend-2023.adaptable.app/users/${id}`,
                 {
                     method: 'PATCH',
                     body: JSON.stringify(updatedComments),

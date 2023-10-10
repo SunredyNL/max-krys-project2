@@ -5,7 +5,7 @@ import GamePlaying from '../components/GamePlaying';
 function GamesPlaying() {
     const [gamesPlaying, setGamesPlaying] = useState([]);
     const fetchGamesIPlay = async () => {
-        const response = await fetch(`http://localhost:5000/users/1?_embed=games`, {
+        const response = await fetch(`https://gamejournal-backend-2023.adaptable.app/users/1?_embed=games`, {
             method: 'GET',
         })
         console.log(response)
@@ -27,7 +27,7 @@ function GamesPlaying() {
             image: game.image,
         }
         try {
-            const response = await fetch(`http://localhost:5000/gamesFinished`, {
+            const response = await fetch(`https://gamejournal-backend-2023.adaptable.app/gamesFinished`, {
                 method: "POST",
                 body: JSON.stringify(payload),
                 headers: {
@@ -43,7 +43,7 @@ function GamesPlaying() {
             console.log(error)
         }
         try {
-            const response = await fetch(`http://localhost:5000/games/${game.id}`, {
+            const response = await fetch(`https://gamejournal-backend-2023.adaptable.app/games/${game.id}`, {
                 method: 'DELETE',
             })
             if (response.ok) {
