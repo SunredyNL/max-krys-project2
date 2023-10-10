@@ -1,2 +1,20 @@
 
 03d5981c38e0462b823b8533abbe6af3
+
+On the weekend:
+-Max wants to do some restructuring and polish on the existing DB and code.
+
+And for the next week MUST-DO:
+- games played and function to move from playing to played,
+- milestone implementation on GamePlayingDetails with possibilty to add and finish them,
+- notes section on GamePlayingDetails,
+- set up profile page,
+- adding games to GamesNotPlaying and filter them out of GameList
+- basic styling
+
+Backlog:
+-badges 
+-multiple users
+-advanced styling/effects/animations
+-sound effects
+-AMAZING LANDING PAGE with user ID input to access your
