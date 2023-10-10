@@ -1,9 +1,10 @@
 import { Link, NavLink, Route, Routes, useParams } from 'react-router-dom'
 import '../App.css'
+import bmoadventure from "../assets/bmo-adventure.gif"
 function HomePage() {
     return (
         <div className='container'>
-            <img className="gif" src="src/assets/bmo-adventure.gif" />
+            <img className="gif" src={bmoadventure} />
             <div className='middle'><Link className='linkText' to={"/profile/1"}><span className='textDPad'>Profile</span></Link></div>
             <div className="buttons">
                 <div>
