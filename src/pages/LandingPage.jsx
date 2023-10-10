@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import ProfileBadge from "../components/ProfileBadge";
 import { Link } from "react-router-dom";
 
 function LandingPage() {
@@ -35,9 +34,9 @@ function LandingPage() {
       <h1>Welcome!</h1>
         {users.map((currentUser) => {
           return (
-            <Link to={`/home-page/${currentUser.id}`}>
+            <Link to={`/home-page/${currentUser.id}`} key={currentUser.id}>
             <div>
-              <img src={currentUser.avatarUrl} alt="User profile picture" />
+              <img src={currentUser.avatarUrl} alt="User profile picture" style={{height: "200px"}}/>
               <h2>{currentUser.name}</h2>
             </div>
           </Link>      
