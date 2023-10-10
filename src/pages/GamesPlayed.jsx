@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import GamePlaying from '../components/GamePlaying';
+import Navbar from '../components/Navbar';
 function GamesPlayed() {
     const [gamesPlayed, setGamesPlayed] = useState([]);
     const fetchGamesIPlayed = async () => {
@@ -19,6 +20,7 @@ function GamesPlayed() {
     }, [])
     return (
         <>
+            <Navbar />
             {gamesPlayed.map(game => (
                 <div>
                     <GamePlaying title={game.title} key={game.id} id={game.id} image={game.image} />

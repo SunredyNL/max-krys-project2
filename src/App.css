@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    background: #232323;
+    background: #558e7f;
     color: #cdcdcd;
     padding: 20px;
     z-index: 1;
@@ -19,7 +19,7 @@
 }
 
 .menu-container a:hover {
-    color: #00C6A7;
+    color: black;
 }
 
 .menu-container input {
@@ -146,4 +146,126 @@
     .menu li {
         padding: 0 20px;
     }
+}
+
+body {
+    background:
+        #64bcac;
+}
+
+.linkText {
+    text-decoration: none;
+    text-transform: none;
+    font-family: Trebuchet MS;
+    color: black;
+}
+
+.textDPad {
+    margin-left: 20px
+}
+
+.middle {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    background-color: #fcd621;
+    width: 90px;
+    height: 30px;
+    border-radius: 10%;
+    -webkit-box-shadow: -2px 2px 0px #666666;
+    -moz-box-shadow: -2px 2px 0px #666666;
+    box-shadow: -2px 2px 0px #666666;
+    text-align: none;
+}
+
+
+.middle:hover {
+    background: #e6c017;
+}
+
+.btnList {
+    -webkit-border-radius: 54;
+    -moz-border-radius: 54;
+    border-radius: 90px;
+    -webkit-box-shadow: -2px 2px 0px #666666;
+    -moz-box-shadow: -2px 2px 0px #666666;
+    box-shadow: -2px 2px 0px #666666;
+    font-family: Trebuchet MS;
+    color: black;
+    font-size: 20px;
+    background: #f90250;
+    padding: 35px 35px 35px 35px;
+    text-decoration: none;
+}
+
+.btnList:hover {
+    background: #e00047;
+    text-decoration: none;
+}
+
+.btnPlay {
+    -webkit-border-radius: 54;
+    -moz-border-radius: 54;
+    border-radius: 54px;
+    -webkit-box-shadow: -2px 2px 0px #666666;
+    -moz-box-shadow: -2px 2px 0px #666666;
+    box-shadow: -2px 2px 0px #666666;
+    font-family: Trebuchet MS;
+    color: black;
+    font-size: 10px;
+    background: #08f62a;
+    padding: 35px 0px 36px 0px;
+    text-decoration: none;
+}
+
+.btnPlay:hover {
+    background: #03db1f;
+    text-decoration: none;
+}
+
+.btnPlayed {
+    -webkit-border-radius: 54;
+    -moz-border-radius: 54;
+    border-radius: 54px;
+    -webkit-box-shadow: -2px 2px 0px #666666;
+    -moz-box-shadow: -2px 2px 0px #666666;
+    box-shadow: -2px 2px 0px #666666;
+    font-family: Georgia;
+    color: white;
+    font-size: 10px;
+    background: #0e039e;
+    padding: 0px 40px 0px 40px;
+    text-decoration: none;
+}
+
+.btnPlayed:hover {
+    background: #05004f;
+    text-decoration: none;
+}
+
+.btnNo {
+    -webkit-border-radius: 54;
+    -moz-border-radius: 54;
+    border-radius: 54px;
+    -webkit-box-shadow: -2px 2px 0px #666666;
+    -moz-box-shadow: -2px 2px 0px #666666;
+    box-shadow: -2px 2px 0px #666666;
+    font-family: Georgia;
+    color: white;
+    font-size: 10px;
+    background: #0e039e;
+    padding: 0px 40px 0px 40px;
+    text-decoration: none;
+}
+
+.btnNo:hover {
+    background: #05004f;
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

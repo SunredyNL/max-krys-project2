@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Navbar from '../components/Navbar'
 import { useParams } from 'react-router-dom'
 function Profile() {
     const [profile, setProfile] = useState({})
@@ -48,6 +49,7 @@ function Profile() {
     }
     return (
         <>
+            <Navbar />
             <div>
                 <img src={profile.avatarUrl} style={{ height: "100px" }} />
                 {profile.name}
