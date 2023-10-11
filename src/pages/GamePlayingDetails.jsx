@@ -1,5 +1,6 @@
 import { Link, NavLink, Route, Routes, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import Navbar from '../components/Navbar'
 function GamesPlayingDetails() {
     const [milestones, setMilestones] = useState([])
     const [newMilestone, setNewMilestone] = useState([])
@@ -80,6 +81,7 @@ function GamesPlayingDetails() {
     }, [game])
     return (
         <>
+            <Navbar id={id} />
             <div>
                 <img src={game.image} style={{ height: "200px" }} />
                 <p>{game.title}</p>
@@ -112,7 +114,7 @@ function GamesPlayingDetails() {
                     </label>
                     <button type="submit">Add</button>
                 </form>
-            </div>
+            </div>  
         </>)
 }
 

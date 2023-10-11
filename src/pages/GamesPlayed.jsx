@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
 import GamePlaying from '../components/GamePlaying';
 import Navbar from '../components/Navbar';
 function GamesPlayed() {
+
+    const {id} = useParams();
     const [gamesPlayed, setGamesPlayed] = useState([]);
     const fetchGamesIPlayed = async () => {
         const response = await fetch(`https://gamejournal-backend-2023.adaptable.app/gamesFinished`, {
@@ -20,7 +23,7 @@ function GamesPlayed() {
     }, [])
     return (
         <>
-            <Navbar />
+            <Navbar id={id}/>
             {gamesPlayed.map(game => (
                 <div>
                     <GamePlaying title={game.title} key={game.id} id={game.id} image={game.image} />

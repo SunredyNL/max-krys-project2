@@ -1,5 +1,6 @@
 import { Link, NavLink, Route, Routes, useParams, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import Navbar from '../components/Navbar'
 const apiKey = "03d5981c38e0462b823b8533abbe6af3"
 function GameDetails() {
     const [game, setGame] = useState([])
@@ -80,7 +81,10 @@ function GameDetails() {
 
     return (
 
-        (<div>
+        (
+        <>
+        <Navbar id={id} />
+            <div>
             <img src={game.background_image} style={{ height: "200px" }} />
             <p>Name: {game.name}</p>
             <div>About: {game.description_raw}</div>
@@ -88,7 +92,9 @@ function GameDetails() {
             <p>Average playtime: {game.playtime} hrs</p>
             <button onClick={addGamePlaying}>Add to my games</button>
             <button onClick={addGameNotPlaying}>I'm not interested</button>
-        </div>))
+        </div>
+        </>
+        ))
 
 }
 

@@ -23,7 +23,7 @@ function HomePage() {
             </div>
 
             <div className='up'></div>
-            <div className='middle'><Link className='linkText' to={"/profile/1"}><span className='textDPad'>Profile</span></Link></div>
+            <div className='middle'><Link className='linkText' to={`/profile/${id}`}><span className='textDPad'>Profile</span></Link></div>
             <div className='down'></div>
             <div className="buttons2">
                 <div className="buttons3">

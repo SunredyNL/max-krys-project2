@@ -59,7 +59,7 @@ function GamesPlaying() {
     }
     return (
         <>
-            <Navbar />
+            <Navbar id={id}/>
             <div>
                 {gamesPlaying.map(game => (
                     <div>

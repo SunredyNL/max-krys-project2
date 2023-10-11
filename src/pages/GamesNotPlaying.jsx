@@ -38,14 +38,14 @@ function GamesNotPlaying() {
     }
     return (
         <>
-            <Navbar />
+            <Navbar id={id} />
             <div>
                 {gamesNotPlaying.map(game => (
                     <div>
                         <GamePlaying title={game.title} key={game.id} id={game.id} image={game.image} /> <button onClick={() => { handleDelete(game) }}>Delete</button>
                     </div>
                 ))}
-            </div>
+            </div>            
         </>)
 }
 
