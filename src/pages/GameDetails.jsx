@@ -46,6 +46,7 @@ function GameDetails() {
             if (response.ok) {
                 const currentGame = await response.json()
                 console.log(currentGame)
+                navigate(`/games-playing/${id}`)
             }
         }
         catch (error) {
