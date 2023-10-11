@@ -71,7 +71,7 @@ function GameList() {
 
     return (
         <>
-            <Navbar />
+            <Navbar id={id}/>
             {games.filter((currentGame) => {
                 return !filterNotPlaying(currentGame);
             }

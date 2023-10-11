@@ -1,6 +1,7 @@
 import { Link, NavLink, Route, Routes, useParams } from 'react-router-dom'
 
-function Navbar() {
+function Navbar(props) {
+    console.log(props.id);
     return (
         <>
             <nav className="menu-container">
@@ -17,17 +18,17 @@ function Navbar() {
                             </Link>
                         </li>
                         <li>
-                            <Link to={"/game-list"}>
+                            <Link to={`/game-list/${props.id}`}>
                                 Game list
                             </Link>
                         </li>
                         <li>
-                            <Link to={"/games-playing"}>
+                            <Link to={`/games-playing/${props.id}`}>
                                 My games
                             </Link>
                         </li>
                         <li>
-                            <Link to={"/games-played"}>
+                            <Link to={`/games-played/${props.id}`}>
                                 Played games
                             </Link>
                         </li>

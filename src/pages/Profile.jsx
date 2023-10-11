@@ -110,7 +110,7 @@ function Profile() {
 
     return (
         <>
-            <Navbar />
+            <Navbar id={id}/>
             <div className="container">
                 <img className='profilePic' src={profile.avatarUrl} />
                 <div className='profileLikeContainer'>
