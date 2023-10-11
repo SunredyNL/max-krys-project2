@@ -13,6 +13,7 @@ function GameList() {
     const [previous, setPrevious] = useState("")
     const [next, setNext] = useState("")
     const [gamesNotPlaying, setGamesNotPlaying] = useState([]);
+    const [gamesPlaying, setGamesPlaying] = useState([]);
     const fetchAllGames = async () => {
         const response = await fetch(currPage, {
             method: 'GET',
@@ -38,10 +39,23 @@ function GameList() {
             console.log(user.gamesNotPlaying)
         }
     }
+    const fetchGamesIDoPlay = async () => {
+        const response = await fetch(`https://gamejournal-backend-2023.adaptable.app/users/${id}?_embed=games`, {
+            method: 'GET',
+        })
+        console.log(response)
+        if (response.status === 200) {
+            const user = await response.json()
+            setGamesPlaying(user.games)
+            console.log(user.games)
+        }
+    }
     useEffect(() => {
         try { fetchAllGames() }
         catch { (error) => { console.log(error) } }
         try { fetchGamesIDontPlay() }
+        catch { (error) => { console.log(error) } }
+        try { fetchGamesIDoPlay() }
         catch { (error) => { console.log(error) } }
     }, [])
     useEffect(() => {
@@ -68,13 +82,22 @@ function GameList() {
         }
         return false;
     }
+    const filterPlaying = (game) => {
+        for (let i = 0; i < gamesPlaying.length; i += 1) {
+            const currGame = gamesPlaying[i]
+            if (currGame.id === game.id) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     return (
         <>
             <Navbar id={id} />
             <div className='gameListContainer'>
                 {games.filter((currentGame) => {
-                    return !filterNotPlaying(currentGame);
+                    return !filterNotPlaying(currentGame) && !filterPlaying(currentGame);
                 }
                 ).map(game => (
                     <Link className='gameDetailsLink' to={`/game-details/${id}/${game.id}`}> <Game name={game.name} key={game.id} id={game.id} background_image={game.background_image} /> </Link>
