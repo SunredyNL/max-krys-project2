@@ -8,8 +8,6 @@ function HomePage() {
     return (
         <div className='container'>
             <img className="gif" src={bmoadventure} />
-
-            <div className='middle'><Link className='linkText' to={`/profile/${id}`}><span className='textDPad'>Profile</span></Link></div>
             <div className="buttons">
                 <div>
                     <Link to={`/game-list/${id}`}>

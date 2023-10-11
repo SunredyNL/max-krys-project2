@@ -5,6 +5,13 @@ import '../App.css'
 import firstlike from "../assets/firstlike.png"
 import firstcomment from "../assets/firstcomment.png"
 import likeandcomment from "../assets/likeandcomment.png"
+import tenComments from "../assets/10comments.png"
+import tenLikes from "../assets/10likes.png"
+import tenPlayed from "../assets/10played.png"
+import hunLikes from "../assets/100likes.png"
+import gamePlayed from "../assets/gameplayed.png"
+import sendHelp from "../assets/sendhelp.png"
+import trueGamer from "../assets/truegamer.png"
 function Profile() {
     const [profile, setProfile] = useState({})
     const [likes, setLikes] = useState(0)
@@ -129,10 +136,69 @@ function Profile() {
                     </label>
                     <button className='addButton' type="submit">Add</button>
                 </form>
+                <p>Badges:</p>
                 <div className='badges'>
-                    <img src={firstlike} />
-                    <img src={firstcomment} />
-                    <img src={likeandcomment} />
+                    {likes >= 1 &&
+                        <div className='achi'>
+                            <img src={firstlike} alt="First like!" />
+                            <p className='descr'> First like! </p>
+                        </div>
+                    }
+                    {likes >= 10 &&
+                        <div className='achi'>
+                            <img src={tenLikes} alt="10 likes!" />
+                            <p className='descr'> 10 likes!</p>
+                        </div>
+                    }
+                    {likes >= 100 &&
+                        <div className='achi'>
+                            <img src={hunLikes} alt="100 likes!" />
+                            <p className='descr' > 100 likes! </p>
+                        </div>
+                    }
+                    {comments.length >= 1 &&
+                        <div className='achi'>
+                            <img src={firstcomment} alt="First comment!" />
+                            <p className='descr'> First comment! </p>
+                        </div>
+                    }
+                    {comments.length >= 10 &&
+                        <div className='achi'>
+                            <img src={tenComments} alt="Ten comments!" />
+                            <p className='descr'> Ten comments! </p>
+                        </div>
+                    }
+                    {(comments.length >= 10 && likes >= 1) &&
+                        <div className='achi'>
+                            <img src={likeandcomment} alt="Comment and a like!" />
+                            <p className='descr'> Comment and a like! </p>
+                        </div>
+                    }
+                    {finishedGames.length >= 1 &&
+                        <div className='achi'>
+                            <img src={gamePlayed} alt="Finished the first game!" />
+                            <p className='descr'> Finished the first game! </p>
+
+                        </div>
+                    }
+                    {finishedGames.length >= 10 &&
+                        <div className='achi'>
+                            <img src={tenPlayed} alt="Finished 10 games!" />
+                            <p className='descr'> Finished 10 games! </p>
+                        </div>
+                    }
+                    {finishedGames.length >= 30 &&
+                        <div className='achi'>
+                            <img src={trueGamer} alt="True gamer!" />
+                            <p className='descr'> True Gamer! </p>
+                        </div>
+                    }
+                    {playingGames.length >= 5 &&
+                        <div className='achi'>
+                            <img src={sendHelp} alt="Send help" />
+                            <p className='descr'> Send help! </p>
+                        </div>
+                    }
                 </div>
             </div>
 
