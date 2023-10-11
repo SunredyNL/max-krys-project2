@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import '../App.css'
 
 function LandingPage() {
   const [users, setUsers] = useState([]);
@@ -32,16 +33,16 @@ function LandingPage() {
   return (
     <div>
       <h1>Welcome!</h1>
-        {users.map((currentUser) => {
-          return (
-            <Link to={`/home-page/${currentUser.id}`} key={currentUser.id}>
+      {users.map((currentUser) => {
+        return (
+          <Link to={`/home-page/${currentUser.id}`} key={currentUser.id}>
             <div>
-              <img src={currentUser.avatarUrl} alt="User profile picture" style={{height: "200px"}}/>
+              <img src={currentUser.avatarUrl} alt="User profile picture" style={{ height: "200px" }} />
               <h2>{currentUser.name}</h2>
             </div>
-          </Link>      
-          );
-        })}
+          </Link>
+        );
+      })}
     </div>
   );
 }

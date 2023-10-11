@@ -424,3 +424,13 @@ body {
     flex-direction: column;
     align-items: center;
 }
+
+.milestone {
+    display: flex;
+    flex-direction: row;
+}
+
+#cbox:checked+p {
+    color: black;
+    text-decoration: line-through;
+}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar';
 import Game from '../components/Game';
+import '../App.css'
 import { Link, NavLink, Route, Routes, useParams } from 'react-router-dom'
 const apiKey = "03d5981c38e0462b823b8533abbe6af3"
 const url = `https://api.rawg.io/api/games?key=${apiKey}`

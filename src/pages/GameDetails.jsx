@@ -1,5 +1,6 @@
 import { Link, NavLink, Route, Routes, useParams, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import '../App.css'
 const apiKey = "03d5981c38e0462b823b8533abbe6af3"
 function GameDetails() {
     const [game, setGame] = useState([])
@@ -33,7 +34,7 @@ function GameDetails() {
             milestones: []
         }
         try {
-            const response = await fetch(`http://localhost:5000/games`, {
+            const response = await fetch(`https://gamejournal-backend-2023.adaptable.app/games`, {
                 method: "POST",
                 body: JSON.stringify(payload),
                 headers: {
@@ -58,7 +59,7 @@ function GameDetails() {
             image: game.background_image,
         }
         try {
-            const response = await fetch(`http://localhost:5000/gamesNotPlaying`, {
+            const response = await fetch(`https://gamejournal-backend-2023.adaptable.app/gamesNotPlaying`, {
                 method: "POST",
                 body: JSON.stringify(payload),
                 headers: {

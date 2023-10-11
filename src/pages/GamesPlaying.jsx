@@ -2,6 +2,7 @@ import { Link, NavLink, Route, Routes, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar';
 import GamePlaying from '../components/GamePlaying';
+import '../App.css'
 function GamesPlaying() {
     const { id } = useParams();
 

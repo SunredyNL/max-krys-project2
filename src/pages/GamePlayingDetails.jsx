@@ -1,5 +1,6 @@
 import { Link, NavLink, Route, Routes, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import '../App.css'
 function GamesPlayingDetails() {
     const [milestones, setMilestones] = useState([])
     const [newMilestone, setNewMilestone] = useState([])
@@ -78,6 +79,7 @@ function GamesPlayingDetails() {
     useEffect(() => {
         console.log(game)
     }, [game])
+
     return (
         <>
             <div>
@@ -85,9 +87,9 @@ function GamesPlayingDetails() {
                 <p>{game.title}</p>
                 <p>Milestones:</p>
                 {milestones.map(milestone => (
-                    <div>
+                    <div className='milestone'>
+                        <input type="checkbox" id="cbox" value="checkbox" />
                         <p>{milestone}</p>
-                        <input type="checkbox" />
                     </div>
                 )
                 )}

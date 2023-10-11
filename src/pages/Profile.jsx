@@ -168,7 +168,7 @@ function Profile() {
                             <p className='descr'> Ten comments! </p>
                         </div>
                     }
-                    {(comments.length >= 10 && likes >= 1) &&
+                    {comments.length >= 1 && likes >= 1 &&
                         <div className='achi'>
                             <img src={likeandcomment} alt="Comment and a like!" />
                             <p className='descr'> Comment and a like! </p>

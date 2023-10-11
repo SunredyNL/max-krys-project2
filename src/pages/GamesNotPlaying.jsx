@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import GamePlaying from '../components/GamePlaying';
 import Navbar from '../components/Navbar';
+import '../App.css'
 function GamesNotPlaying() {
     const { id } = userParams();
 
