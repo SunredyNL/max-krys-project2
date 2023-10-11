@@ -10,6 +10,8 @@ import { useEffect, useState } from "react";
 import "../App.css";
 import metacritic from "../assets/metacritic.png";
 import Navbar from "../components/Navbar";
+import { v4 as uuidv4 } from "uuid";
+
 const apiKey = "03d5981c38e0462b823b8533abbe6af3";
 function GameDetails() {
   const [game, setGame] = useState([]);
@@ -41,8 +43,9 @@ function GameDetails() {
 
   const addGamePlaying = async () => {
     const payload = {
-      userId: id,
-      id: game.id,
+      userId: parseInt(id),
+      apiId: game.id,
+      id: uuidv4(),
       title: game.name,
       image: game.background_image,
       notes: [],
@@ -71,8 +74,9 @@ function GameDetails() {
 
   const addGameNotPlaying = async () => {
     const payload = {
-      userId: id,
-      id: game.id,
+      userId: parseInt(id),
+      apiId: game.id,
+      id: uuidv4(),
       title: game.name,
       image: game.background_image,
     };
