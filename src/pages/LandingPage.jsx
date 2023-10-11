@@ -1,9 +1,8 @@
-import { createContext } from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import '../App.css'
-
-const UserContext = createContext(null);
+import "../App.css";
+import UserForm from "../components/UserForm";
+import defaultAvatar from "../assets/uavatar.png";
 
 function LandingPage() {
   const [users, setUsers] = useState([]);
@@ -36,16 +35,29 @@ function LandingPage() {
   return (
     <div>
       <h1>Welcome!</h1>
-      {users.map((currentUser) => {
-        return (
-          <Link to={`/home-page/${currentUser.id}`} key={currentUser.id}>
-            <div>
-              <img src={currentUser.avatarUrl} alt="User profile picture" style={{ height: "200px" }} />
-              <h2>{currentUser.name}</h2>
-            </div>
-          </Link>
-        );
-      })}
+      <div>
+        {users.map((currentUser) => {
+          return (
+            <Link to={`/home-page/${currentUser.id}`} key={currentUser.id}>
+              <div>
+                {currentUser.avatarUrl === "default" ? (
+                  <img className="profilePic" src={defaultAvatar} />
+                ) : (
+                  <img
+                    className="profilePic"
+                    src={currentUser.avatarUrl}
+                    alt="User Avatar"
+                  />
+                )}
+                <h2>{currentUser.name}</h2>
+              </div>
+            </Link>
+          );
+        })}
+      </div>
+      <div>
+        <UserForm />
+      </div>
     </div>
   );
 }
