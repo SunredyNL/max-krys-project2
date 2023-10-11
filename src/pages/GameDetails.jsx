@@ -6,10 +6,10 @@ import Navbar from '../components/Navbar'
 const apiKey = "03d5981c38e0462b823b8533abbe6af3"
 function GameDetails() {
     const [game, setGame] = useState([])
-    const { id } = useParams()
+    const { id, gameId } = useParams()
     const navigate = useNavigate()
     const fetchAllGames = async () => {
-        const response = await fetch(`https://api.rawg.io/api/games/${id}?key=${apiKey}`, {
+        const response = await fetch(`https://api.rawg.io/api/games/${gameId}?key=${apiKey}`, {
             method: 'GET',
         })
         console.log(response)

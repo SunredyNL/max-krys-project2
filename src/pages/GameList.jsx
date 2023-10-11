@@ -77,7 +77,7 @@ function GameList() {
                     return !filterNotPlaying(currentGame);
                 }
                 ).map(game => (
-                    <Link className='gameDetailsLink' to={`/game-details/${game.id}`}> <Game name={game.name} key={game.id} id={game.id} background_image={game.background_image} /> </Link>
+                    <Link className='gameDetailsLink' to={`/game-details/${id}/${game.id}`}> <Game name={game.name} key={game.id} id={game.id} background_image={game.background_image} /> </Link>
                 )
                 )}
             </div>

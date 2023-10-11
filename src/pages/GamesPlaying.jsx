@@ -64,7 +64,7 @@ function GamesPlaying() {
             <div className='gameListContainer'>
                 {gamesPlaying.map(game => (
                     <div className='gameContainerPlaying'>
-                        <Link className='gameDetailsLink' to={`/game-playing/${game.id}`}><GamePlaying title={game.title} key={game.id} id={game.id} image={game.image} /></Link>
+                        <Link className='gameDetailsLink' to={`/game-playing/${id}/${game.id}`}><GamePlaying title={game.title} key={game.id} id={game.id} image={game.image} /></Link>
                         <button className='gamePlayingFinish' onClick={() => { handleDelete(game) }}>I finished the game</button>
                     </div>
                 ))}

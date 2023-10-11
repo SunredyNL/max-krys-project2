@@ -25,8 +25,8 @@ function App() {
           <Route path='/games-played/:id' element={<GamesPlayed />} />
           <Route path='/games-playing/:id' element={<GamesPlaying />} />
           <Route path='/games-not-playing/:id' element={<GamesNotPlaying />} />
-          <Route path='/game-details/:id' element={<GameDetails />} />
-          <Route path='/game-playing/:id' element={<GamesPlayingDetails />} />
+          <Route path='/game-details/:id/:gameId' element={<GameDetails />} />
+          <Route path='/game-playing/:id/:gameId' element={<GamesPlayingDetails />} />
           <Route path='/' element={<LandingPage />} />
           <Route path='*' element={<h1>404 Page Not Found</h1>} />
         </Routes>
