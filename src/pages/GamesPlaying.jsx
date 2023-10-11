@@ -60,12 +60,12 @@ function GamesPlaying() {
     }
     return (
         <>
-            <Navbar id={id}/>
-            <div>
+            <Navbar id={id} />
+            <div className='gameListContainer'>
                 {gamesPlaying.map(game => (
-                    <div>
-                        <Link to={`/game-playing/${game.id}`}><GamePlaying title={game.title} key={game.id} id={game.id} image={game.image} /></Link>
-                        <button onClick={() => { handleDelete(game) }}>I finished the game</button>
+                    <div className='gameContainerPlaying'>
+                        <Link className='gameDetailsLink' to={`/game-playing/${game.id}`}><GamePlaying title={game.title} key={game.id} id={game.id} image={game.image} /></Link>
+                        <button className='gamePlayingFinish' onClick={() => { handleDelete(game) }}>I finished the game</button>
                     </div>
                 ))}
             </div>

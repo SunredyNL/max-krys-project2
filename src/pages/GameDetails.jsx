@@ -1,6 +1,7 @@
 import { Link, NavLink, Route, Routes, useParams, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import '../App.css'
+import metacritic from "../assets/metacritic.png"
 import Navbar from '../components/Navbar'
 const apiKey = "03d5981c38e0462b823b8533abbe6af3"
 function GameDetails() {
@@ -83,18 +84,18 @@ function GameDetails() {
     return (
 
         (
-        <>
-        <Navbar id={id} />
-            <div>
-            <img src={game.background_image} style={{ height: "200px" }} />
-            <p>Name: {game.name}</p>
-            <div>About: {game.description_raw}</div>
-            <p>Metacritic score: {game.metacritic}</p>
-            <p>Average playtime: {game.playtime} hrs</p>
-            <button onClick={addGamePlaying}>Add to my games</button>
-            <button onClick={addGameNotPlaying}>I'm not interested</button>
-        </div>
-        </>
+            <>
+                <Navbar id={id} />
+                <div className='container'>
+                    <img src={game.background_image} style={{ height: "200px" }} />
+                    <p className='gameName'>{game.name}</p>
+                    <div>About: {game.description_raw}</div>
+                    <p className='score'><img className='metacritic' src={metacritic} />Metacritic score: {game.metacritic}</p>
+                    <p>Average playtime: {game.playtime} hrs</p>
+                    <button className='btnAdd' onClick={addGamePlaying}>Add to my games</button>
+                    <button className='btnNotInterested' onClick={addGameNotPlaying}>I'm not interested</button>
+                </div>
+            </>
         ))
 
 }

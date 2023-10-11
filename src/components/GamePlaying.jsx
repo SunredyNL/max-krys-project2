@@ -1,9 +1,9 @@
 function GamePlaying(props) {
 
     return (
-        <div>
-            <p>{props.title}</p>
-            <img src={props.image} style={{ height: "100px" }} />
+        <div className='gameContainer'>
+            <p className='gameNameList'>{props.title}</p>
+            <img src={props.image} className='gameImage' />
         </div>
     )
 }

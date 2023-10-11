@@ -1,5 +1,5 @@
 import { Link, NavLink, Route, Routes, useParams } from 'react-router-dom'
-
+import '../App.css'
 function Navbar(props) {
     console.log(props.id);
     return (

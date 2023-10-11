@@ -71,14 +71,16 @@ function GameList() {
 
     return (
         <>
-            <Navbar id={id}/>
-            {games.filter((currentGame) => {
-                return !filterNotPlaying(currentGame);
-            }
-            ).map(game => (
-                <Link to={`/game-details/${game.id}`}> <Game name={game.name} key={game.id} id={game.id} background_image={game.background_image} /> </Link>
-            )
-            )}
+            <Navbar id={id} />
+            <div className='gameListContainer'>
+                {games.filter((currentGame) => {
+                    return !filterNotPlaying(currentGame);
+                }
+                ).map(game => (
+                    <Link className='gameDetailsLink' to={`/game-details/${game.id}`}> <Game name={game.name} key={game.id} id={game.id} background_image={game.background_image} /> </Link>
+                )
+                )}
+            </div>
             {previous && <button onClick={onPrevious}>Previous page</button>}
             {next && <button onClick={onNext}>Next Page</button>}
         </>)

@@ -30,13 +30,13 @@
     position: absolute;
     cursor: pointer;
     opacity: 0;
-    /* hide this */
+
     z-index: 2;
-    /* and place it over the hamburger */
+
     -webkit-touch-callout: none;
 }
 
-/* Burger menu */
+
 .menu-container span {
     display: block;
     width: 33px;
@@ -84,7 +84,6 @@
     font-size: 22px;
 }
 
-/* mobile styles */
 @media only screen and (max-width: 767px) {
     .menu-container {
         flex-direction: column;
@@ -433,4 +432,150 @@ body {
 #cbox:checked+p {
     color: black;
     text-decoration: line-through;
+}
+
+.gameImage {
+    height: 60px;
+}
+
+.gameDetailsLink {
+    text-decoration: none;
+    color: black;
+}
+
+.btnNotInterested {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    width: 180px;
+    font-family: Trebuchet MS;
+    height: 40px;
+    border-radius: 10%;
+    -webkit-box-shadow: -2px 2px 0px #666666;
+    -moz-box-shadow: -2px 2px 0px #666666;
+    box-shadow: -2px 2px 0px #666666;
+    text-align: none;
+    margin-top: 10px;
+}
+
+.btnNotInterested:hover {
+    background-color: darkred;
+}
+
+.metacritic {
+    height: 20px;
+}
+
+.score {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.gameName {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #d6462d;
+    width: 180px;
+    font-family: Trebuchet MS;
+    height: 40px;
+    border-radius: 10%;
+    -webkit-box-shadow: -2px 2px 0px #666666;
+    -moz-box-shadow: -2px 2px 0px #666666;
+    box-shadow: -2px 2px 0px #666666;
+    text-align: none;
+    margin-top: 10px;
+}
+
+.btnAdd {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fcd621;
+    width: 180px;
+    font-family: Trebuchet MS;
+    height: 40px;
+    border-radius: 10%;
+    -webkit-box-shadow: -2px 2px 0px #666666;
+    -moz-box-shadow: -2px 2px 0px #666666;
+    box-shadow: -2px 2px 0px #666666;
+    text-align: none;
+}
+
+.btnAdd:hover {
+    background: #e6c017;
+}
+
+.gameNameList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #e4e4e4;
+    width: 180px;
+    font-family: Trebuchet MS;
+    height: 30px;
+    border-radius: 10%;
+    text-align: none;
+}
+
+.gameContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #f90250; */
+    font-family: Trebuchet MS;
+    width: 290px;
+    height: 140px;
+    padding: 10px;
+    background-image: url("assets/game-cartridge.png");
+    text-align: none;
+    margin-bottom: 30px;
+}
+
+.gameContainer:hover {
+    box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
+    transform: scale(1.25);
+    position: relative;
+    z-index: 5;
+    transform: rotate(-6deg)
+}
+
+.gameListContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.gameContainerPlaying {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gamePlayingFinish {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fcd621;
+    width: 180px;
+    font-family: Trebuchet MS;
+    height: 40px;
+    border-radius: 10%;
+    -webkit-box-shadow: -2px 2px 0px #666666;
+    -moz-box-shadow: -2px 2px 0px #666666;
+    box-shadow: -2px 2px 0px #666666;
+    text-align: none;
+}
+
+.gamePlayingFinish:hover {
+    background: #e6c017;
 }
