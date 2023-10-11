@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react'
 import GamePlaying from '../components/GamePlaying';
 import Navbar from '../components/Navbar';
 import '../App.css'
+import { Link, NavLink, Route, Routes, useParams, useNavigate } from 'react-router-dom'
 function GamesNotPlaying() {
-    const { id } = userParams();
+    const { id } = useParams();
 
     const [gamesNotPlaying, setGamesNotPlaying] = useState([]);
     const fetchGamesIDontPlay = async () => {
@@ -40,13 +41,13 @@ function GamesNotPlaying() {
     return (
         <>
             <Navbar id={id} />
-            <div>
+            <div className='gameListContainer'>
                 {gamesNotPlaying.map(game => (
-                    <div>
-                        <GamePlaying title={game.title} key={game.id} id={game.id} image={game.image} /> <button onClick={() => { handleDelete(game) }}>Delete</button>
+                    <div className='gameContainerPlaying'>
+                        <GamePlaying title={game.title} key={game.id} id={game.id} image={game.image} /> <button className='gamesNotPlayingDelete' onClick={() => { handleDelete(game) }}>Delete</button>
                     </div>
                 ))}
-            </div>            
+            </div>
         </>)
 }
 

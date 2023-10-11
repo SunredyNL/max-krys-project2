@@ -427,6 +427,15 @@ body {
 .milestone {
     display: flex;
     flex-direction: row;
+    background-color: #f90250;
+    font-family: Trebuchet MS;
+    padding-right: 5px;
+    padding-left: 5px;
+    color: white;
+    -webkit-box-shadow: -2px 2px 0px #666666;
+    -moz-box-shadow: -2px 2px 0px #666666;
+    box-shadow: -2px 2px 0px #666666;
+    margin-bottom: 10px;
 }
 
 #cbox:checked+p {
@@ -436,6 +445,7 @@ body {
 
 .gameImage {
     height: 60px;
+    width: 100px;
 }
 
 .gameDetailsLink {
@@ -479,6 +489,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     background-color: #d6462d;
     width: 180px;
     font-family: Trebuchet MS;
@@ -578,4 +589,50 @@ body {
 
 .gamePlayingFinish:hover {
     background: #e6c017;
+}
+
+.note {
+    display: flex;
+    flex-direction: row;
+    background-color: #ffe9ab;
+    font-family: Trebuchet MS;
+    padding-right: 5px;
+    padding-left: 5px;
+    color: black;
+    -webkit-box-shadow: -2px 2px 0px #666666;
+    -moz-box-shadow: -2px 2px 0px #666666;
+    box-shadow: -2px 2px 0px #666666;
+    margin-bottom: 10px;
+}
+
+
+.addButtonGames {
+    background-color: #fcd621;
+    font-family: Trebuchet MS;
+    border-radius: 10%;
+}
+
+.addButtonGames:hover {
+    background: #e6c017;
+}
+
+.gamesNotPlayingDelete {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #08f62a;
+    width: 180px;
+    font-family: Trebuchet MS;
+    height: 40px;
+    border-radius: 10%;
+    -webkit-box-shadow: -2px 2px 0px #666666;
+    -moz-box-shadow: -2px 2px 0px #666666;
+    box-shadow: -2px 2px 0px #666666;
+    text-align: none;
+}
+
+.gamesNotPlayingDelete:hover {
+    background: #03db1f;
+    text-decoration: none;
 }

@@ -84,9 +84,9 @@ function GamesPlayingDetails() {
     return (
         <>
             <Navbar id={id} />
-            <div>
+            <div className='container'>
                 <img src={game.image} style={{ height: "200px" }} />
-                <p>{game.title}</p>
+                <p className='gameName'>{game.title}</p>
                 <p>Milestones:</p>
                 {milestones.map(milestone => (
                     <div className='milestone'>
@@ -100,12 +100,12 @@ function GamesPlayingDetails() {
                         New milestone
                         <input name="newMilestone" value={newMilestone} type="text" onChange={event => setNewMilestone(event.target.value)} required />
                     </label>
-                    <button type="submit">Add</button>
+                    <button className='addButtonGames' type="submit">Add</button>
                 </form>
                 <p>Notes:</p>
                 {notes.map(note => (
                     <div>
-                        <p>{note}</p>
+                        <p className='note'>{note}</p>
                     </div>
                 )
                 )}
@@ -114,9 +114,9 @@ function GamesPlayingDetails() {
                         New note
                         <input name="newNote" value={newNote} type="text" onChange={event => setNewNote(event.target.value)} required />
                     </label>
-                    <button type="submit">Add</button>
+                    <button className='addButtonGames' type="submit">Add</button>
                 </form>
-            </div>  
+            </div>
         </>)
 }
 
