@@ -14,6 +14,7 @@ function GameList() {
   const [next, setNext] = useState("");
   const [gamesNotPlaying, setGamesNotPlaying] = useState([]);
   const [gamesPlaying, setGamesPlaying] = useState([]);
+  const [gamesFinished, setGamesFinished] = useState([]);
   const fetchAllGames = async () => {
     const response = await fetch(currPage, {
       method: "GET",
@@ -56,6 +57,20 @@ function GameList() {
       console.log(user.games);
     }
   };
+  const fetchGamesIFinished = async () => {
+    const response = await fetch(
+      `https://gamejournal-backend-2023.adaptable.app/users/${id}?_embed=gamesFinished`,
+      {
+        method: "GET",
+      }
+    );
+    console.log(response);
+    if (response.status === 200) {
+      const user = await response.json();
+      setGamesFinished(user.gamesFinished);
+      console.log(user.gamesFinished);
+    }
+  };
   useEffect(() => {
     try {
       fetchAllGames();
@@ -73,6 +88,13 @@ function GameList() {
     }
     try {
       fetchGamesIDoPlay();
+    } catch {
+      (error) => {
+        console.log(error);
+      };
+    }
+    try {
+      fetchGamesIFinished();
     } catch {
       (error) => {
         console.log(error);
@@ -117,7 +139,16 @@ function GameList() {
     }
     return false;
   };
-  
+  const filterFinished = (game) => {
+    for (let i = 0; i < gamesFinished.length; i += 1) {
+      const currGame = gamesFinished[i];
+      if (currGame.apiId === game.id) {
+        return true;
+      }
+    }
+    return false;
+  };
+
 
   return (
     <>
@@ -126,7 +157,7 @@ function GameList() {
         {games
           .filter((currentGame) => {
             return (
-              !filterNotPlaying(currentGame) && !filterPlaying(currentGame)
+              !filterNotPlaying(currentGame) && !filterPlaying(currentGame) && !filterFinished(currentGame)
             );
           })
           .map((game) => (
