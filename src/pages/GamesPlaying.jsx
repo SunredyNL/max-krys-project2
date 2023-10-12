@@ -77,7 +77,7 @@ function GamesPlaying() {
       <Navbar id={id} />
       <div className="gameListContainer">
         {gamesPlaying.map((game) => (
-          <div className="gameContainerPlaying">
+          <div className="gameContainerPlaying" key={game.id}>
             <Link
               className="gameDetailsLink"
               to={`/game-playing/${id}/${game.id}`}
