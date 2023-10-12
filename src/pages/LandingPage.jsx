@@ -33,31 +33,35 @@ function LandingPage() {
   }, []);
 
   return (
-    <div>
-      <h1>Welcome!</h1>
-      <div>
-        {users.map((currentUser) => {
-          return (
-            <Link to={`/home-page/${currentUser.id}`} key={currentUser.id}>
-              <div>
-                {currentUser.avatarUrl === "default" ? (
-                  <img className="profilePic" src={defaultAvatar} />
-                ) : (
-                  <img
-                    className="profilePic"
-                    src={currentUser.avatarUrl}
-                    alt="User Avatar"
-                  />
-                )}
-                <h2>{currentUser.name}</h2>
-              </div>
-            </Link>
-          );
-        })}
-      </div>
-      <div>
-        <UserForm />
-      </div>
+    <div className="landing-page-container" style={{}}>
+      <h1 className="landingHeading">Welcome to Gaming BMO!</h1>
+        <div className="user-profile-container">
+          {users.map((currentUser) => {
+            return (
+              <Link
+                to={`/home-page/${currentUser.id}`}
+                key={currentUser.id}
+                className="user-profile-link"
+              >
+                <div className="user-profile">
+                  {currentUser.avatarUrl === "default" ? (
+                    <img className="profile-pic-landing" src={defaultAvatar} />
+                  ) : (
+                    <img
+                      className="profile-pic-landing"
+                      src={currentUser.avatarUrl}
+                      alt="User Avatar"
+                    />
+                  )}
+                  <h2 className="user-profile-heading">{currentUser.name}</h2>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+        <div>
+          <UserForm className="userForm" />
+        </div>
     </div>
   );
 }

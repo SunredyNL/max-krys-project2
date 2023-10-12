@@ -38,44 +38,45 @@ function UserForm() {
   }
 
   return (
-    <form
-      onSubmit={createNewUser}
-      style={{ display: "flex", flexDirection: "column" }}
-    >
-      <label htmlFor="userName">
-        Username:
-        <input
-          type="text"
-          name="userName"
-          value={userName}
-          onChange={(event) => {
-            setUserName(event.target.value);
-          }}
-        />
-      </label>
-      <label htmlFor="avatarUrl">
-        Avatar Url:
-        <input
-          type="text"
-          name="avatarUrl"
-          value={avatarUrl}
-          onChange={(event) => {
-            setAvatarUrl(event.target.value);
-          }}
-        />
-      </label>
-      <label htmlFor="description">
-        Description:
-        <input
-          type="text"
-          name="description"
-          value={description}
-          onChange={(event) => {
-            setDescription(event.target.value);
-          }}
-        />
-      </label>
-      <button type="submit" style={{ width: "200px" }}>
+    <form onSubmit={createNewUser} className="create-user-form">
+      <label htmlFor="userName">Username: </label>
+      <input
+        type="text"
+        name="userName"
+        id="userName"
+        value={userName}
+        onChange={(event) => {
+          setUserName(event.target.value);
+        }}
+      />
+
+      <label htmlFor="avatarUrl">Avatar Url: </label>
+      <input
+        type="text"
+        name="avatarUrl"
+        id="avatarUrl"
+        value={avatarUrl}
+        onChange={(event) => {
+          setAvatarUrl(event.target.value);
+        }}
+      />
+
+      <label htmlFor="description">Description: </label>
+      <input
+        type="text"
+        name="description"
+        value={description}
+        id="description"
+        onChange={(event) => {
+          setDescription(event.target.value);
+        }}
+      />
+
+      <button
+        type="submit"
+        className="create-user-button"
+        style={{ width: "10rem" }}
+      >
         Create User
       </button>
     </form>

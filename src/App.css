@@ -636,3 +636,72 @@ body {
     background: #03db1f;
     text-decoration: none;
 }
+
+
+/* Landing Page Styling */
+
+.landing-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.user-profile-container {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 5rem;
+}
+
+.profile-pic-landing {
+    height: 8rem;
+    border-radius: 50%;
+    border: 4px solid #fcd621;
+    box-shadow: 0px 5px 1px black;
+}
+
+.landingHeading {
+    margin-bottom: 5rem;
+    color: #fcd621;
+    text-shadow: 4px 1px 1px black;
+    font-family: Trebuchet MS;
+}
+
+.user-profile-heading {
+    text-align: center;
+    color: #fcd621;
+    text-shadow: 4px 1px 1px black;
+    font-family: Trebuchet MS;
+}
+
+.user-profile-link {
+    text-decoration: none;
+    font-family: Trebuchet MS;
+}
+
+.create-user-button {
+    text-align: center;
+    background-color: #fcd621;
+    border-radius: 5rem;
+    box-shadow: 0px 2px 1px black;
+    margin-top: 1rem;
+}
+
+.create-user-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-user-form label {
+    color: #fcd621;
+    margin: 0.2rem 0;
+    font-family: Trebuchet MS;
+    text-shadow: 3px 1px 1px black;
+}
+
+
