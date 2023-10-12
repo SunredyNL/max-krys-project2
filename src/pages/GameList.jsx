@@ -149,7 +149,6 @@ function GameList() {
     return false;
   };
 
-
   return (
     <>
       <Navbar id={id} />
@@ -157,7 +156,9 @@ function GameList() {
         {games
           .filter((currentGame) => {
             return (
-              !filterNotPlaying(currentGame) && !filterPlaying(currentGame) && !filterFinished(currentGame)
+              !filterNotPlaying(currentGame) &&
+              !filterPlaying(currentGame) &&
+              !filterFinished(currentGame)
             );
           })
           .map((game) => (
